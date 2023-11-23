@@ -8,8 +8,8 @@ int sub(int a, int b) {
 
 
 String showFunc(int a, int b){
-  int sum = add(int a,int b);
-  int subs = sub(int a,int b);
+  int sum = add(a, b);
+  int subs = sub(a, b);
 
   return "Add $a + $b = $sum\n Sub $a - $b = $subs";
 }
