@@ -11,5 +11,5 @@ String showFunc(int a, int b){
   int sum = add(a, b);
   int subs = sub(a, b);
 
-  return "Add $a + $b = $sum\n Sub $a - $b = $subs";
+  return "Add $a + $b = $sum\nSub $a - $b = $subs";
 }
