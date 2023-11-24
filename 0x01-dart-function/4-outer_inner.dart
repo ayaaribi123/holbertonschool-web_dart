@@ -6,7 +6,7 @@ void outer(String name, String id)
 
 
 String inner(String name) {
-  List<Sting> namesplit = name.split(" ");
+  Sting namesplit = name.split(" ");
   String firstName = namesplit[0];
   String lastName = namesplit[1][0];
   return "Hello Agent $lastName.$firstName";
