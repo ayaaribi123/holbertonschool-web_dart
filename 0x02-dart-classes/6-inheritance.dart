@@ -22,7 +22,6 @@ class User {
       'name': name,
       'age': age,
       'height': height,
-      'user_password': user_password?.toString(),
     };
   }
 
