@@ -1,21 +1,24 @@
 String longestUniqueSubstring(String str) {
+  int i = str.length;
   String longestSubstring = "";
-  int left = 0;
+  int start = 0;
   int en = 0;
   Set<String> uniqueChars = {};
-  int i = str.length;
 
-  for (start < i; start++; en++) {
-    String currentChar = str[start];
+  while (en < i) {
+    String currentChar = str[en];
     if (!uniqueChars.contains(currentChar)) {
       uniqueChars.add(currentChar);
-      else if (start - en > longestSubstring.length) {
-        longestSubstring = str.substring(en, start);
+      en++;
+      if (en - start > longestSubstring.length) {
+        longestSubstring = str.substring(start, en);
       }
     } else {
-      uniqueChars.remove(str[en]);
+      uniqueChars.remove(str[start]);
+      start++;
     }
   }
 
   return longestSubstring;
 }
+
