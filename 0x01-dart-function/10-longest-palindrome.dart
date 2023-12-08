@@ -8,6 +8,7 @@ String longestPalindrome(String s) {
     return "none";
   }
   
+  String longlen = "none";
   int max = 0;
   
   for (int i = 0; i < s.length; i++) {
@@ -15,11 +16,11 @@ String longestPalindrome(String s) {
       String substr = s.substring(i, j);
       if (isPalindrome(substr) && substr.length > max) {
         max = substr.length;
-        substr = "none";
+        longlen = substr;
       }
     }
   }
   
-  return substr;
+  return longlen;
 }
 
