@@ -1,34 +1,35 @@
-class Password {
-  String _password;
+import 'dart:convert';
 
-  Password({
-    required String password,
-  }) : _password = password;
-
-  String get password => _password;
-
-  set password(String newPassword) {
-    _password = newPassword;
+class User {
+  int id;
+  String name;
+  int age;
+  double height;
+  User({
+    required this.id,
+    required this.name,
+    required this.age,
+    required this.height,
+  });
+ Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'age': age,
+      'height': height,
+    };
   }
-
-  bool isValid() {
-    if (_password.length < 9 || _password.length > 16) {
-      return false;
-    }
-
-    if (!_password.contains(RegExp(r'[A-Z]')) || !_password.contains(RegExp(r'[a-z]'))) {
-      return false;
-    }
-
-    if (!_password.contains(RegExp(r'[0-9]'))) {
-      return false;
-    }
-
-    return true;
+   static User fromJson(Map<dynamic, dynamic> userJson) {
+    return User(
+      id: userJson['id'],
+      name: userJson['name'],
+      age: userJson['age'],
+      height: userJson['height'],
+    );
   }
 
   @override
   String toString() {
-    return "Your Password is: $_password";
+    return 'User(id : $id ,name: $name, age: $age, height: $height)';
   }
 }
