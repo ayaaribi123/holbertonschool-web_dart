@@ -1,5 +1,5 @@
 class Password {
-  String _password;
+  String password;
 
   Password({
     required this.password,
